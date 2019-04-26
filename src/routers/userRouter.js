@@ -188,4 +188,16 @@ router.patch('/users/:username', (req, res) => {
     })
 })
 
+//delete user
+router.delete('/users/delete', (req, res) => {
+    const sql = `DELETE FROM users WHERE username = ?`
+    const data = req.body.username
+
+    conn.query(sql, data, (err, result) => {
+        if(err) return res.send(err.sqlMessage)
+
+        res.send(result)
+    })
+})
+
 module.exports = router
