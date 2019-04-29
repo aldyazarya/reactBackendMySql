@@ -189,6 +189,7 @@ router.patch('/users/:username', (req, res) => {
 })
 
 //delete user
+//all task will deleted too
 router.delete('/users/delete', (req, res) => {
     const sql = `DELETE FROM users WHERE username = ?`
     const data = req.body.username
