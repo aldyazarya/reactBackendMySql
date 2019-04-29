@@ -8,6 +8,10 @@ const app = express()
 const port = process.env.PORT
 
 
+app.get('/', (req, res) => {
+    res.send(`<h1>API Running on Heroku port ${port}</h1>`)
+})
+
 app.use(express.json())
 app.use(cors())
 app.use(userRouter)
