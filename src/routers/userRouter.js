@@ -84,7 +84,7 @@ router.get('/getavatar', (req, res) => {
     conn.query (sql, (err, result) => {
         if(err) return res.send(err.sqlMessage)
 
-        res.send({user: result, photo: `http://localhost:2010/avatar/${result[0].avatar}`} )
+        res.send({user: result, photo: `https://reactbackendmysql.herokuapp.com/avatar/${result[0].avatar}`} )
     })
 })
 //show avatar in browser
@@ -170,7 +170,7 @@ router.get('/users/username', (req, res) => {
 
         res.send({
             user,
-            photo: `http://localhost:2010/avatar/${user.avatar}`
+            photo: `https://reactbackendmysql.herokuapp.com/avatar/${user.avatar}`
         })
     })
 })

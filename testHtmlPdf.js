@@ -29,21 +29,21 @@ var source = `
 
 var data = {
     "imgSrc" : "http://icons.iconarchive.com/icons/iconka/meow/256/cat-clean-icon.png",
-    "username" : "Rochafi",
-    "name" : "Rochafi Alvin",
-    "email" : "rochafi.dev@gmail.com"
+    "username" : "masako",
+    "name" : "masako",
+    "email" : "aldy1612@gmail.com"
 }
 
 var template = Handlebars.compile(source) // compile teks html
 var result = template(data) // gabungkan object data dg template html
 
-fs.writeFileSync('./src/uploads/result.html', result)
+fs.writeFileSync('./src/upload/result.html', result)
 
-var htmls = fs.readFileSync('./src/uploads/result.html', 'utf8')
+var htmls = fs.readFileSync('./src/upload/result.html', 'utf8')
 
 var options = {format: 'Letter'}
 
-pdf.create(htmls, options).toFile('./src/uploads/result.pdf', (err, result) => {
+pdf.create(htmls, options).toFile('./src/upload/result.pdf', (err, result) => {
     if (err) return console.log(err.message);
     
     console.log("PDF berhasil dibuat");
