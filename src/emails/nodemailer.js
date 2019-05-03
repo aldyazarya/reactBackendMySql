@@ -77,7 +77,7 @@ const sendVerify= (username, name, email) => {
             from: 'Aldy Azarya <aldy1612@gmail.com>',
             to: email,
             subject: 'Verifikasi Email',
-            html: `<h1><a href="https://reactbackendmysql.herokuapp.com/">Klik untuk verifikasi</a></h1>`,
+            html: `<h1><a href="https://reactbackendmysql.herokuapp.com/verify?username=${username}">Klik untuk verifikasi</a></h1>`,
             attachments: [{
                 filename : `invoice.pdf`,
                 path : `${fileDir}/result.pdf`,
